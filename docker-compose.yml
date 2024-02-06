@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+
+  back:
+    container_name: plant-back
+    image: plant
+    user: "501:20"
+    working_dir: /app
+    build: ./deploy
+    # env_file:
+    #   - ./.env
+    volumes:
+      - ./back:/app
+      - ./media:/media
+      - ./logs:/logs
+      - ./deploy/gunicorn.py:/gunicorn.py
+    command: gunicorn -c /gunicorn.py main:app
+
+  front:
+    container_name: plant-front
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./front:/app
+    command: sleep 30d
+
+  # db:
+  #   container_name: film-db
+  #   image: postgres:14
+  #   user: "${UID}:${GID}"
+  #   env_file:
+  #     - ./.env
+  #   volumes:
+  #     - ./deploy/db_data:/var/lib/postgresql/data
+  #     - ./deploy/db_backup:/backup
+  #     - ./deploy/postgresql.conf:/var/lib/postgresql/data/postgresql.conf

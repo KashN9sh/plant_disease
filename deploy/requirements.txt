@@ -1,0 +1,17 @@
+# Для работы fastapi, описано в доках
+fastapi
+pydantic
+uvicorn[standard]
+gunicorn
+
+# Безопасность
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+
+
+# Это мое
+sqlalchemy
+psycopg2
+typer
+alembic
