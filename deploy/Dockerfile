@@ -6,4 +6,7 @@ RUN apt-get -yq update \
     && apt-get purge -y --auto-remove
 
 COPY ./requirements.txt /requirements.txt
+
+RUN pip install --upgrade pip
+
 RUN pip install --no-cache-dir --upgrade -r /requirements.txt
