@@ -1,4 +1,4 @@
-from constants import labels
+from constants import labels, descriptions
 import torch
 
 # for moving data to device (CPU or GPU)
@@ -20,4 +20,4 @@ def predict_image(img, model):
     _, preds  = torch.max(yb, dim=1)
     # Retrieve the class label
 
-    return labels[preds[0].item()]
+    return descriptions[labels[preds[0].item()]]
