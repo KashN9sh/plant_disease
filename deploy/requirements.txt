@@ -11,8 +11,6 @@ passlib[bcrypt]
 
 
 # Это мое
-sqlalchemy
-psycopg2
-typer
-alembic
 Pillow
+torch
+torchvision
