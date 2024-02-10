@@ -44,7 +44,7 @@ async def create_files(files: Annotated[list[bytes], File()]):
     img_tensor = app.package["transform"](image)
 
     print(predict_image(img_tensor, app.package["model"]))
-    return {"file_sizes": [len(file) for file in files]}
+    return predict_image(img_tensor, app.package["model"])
 
 
 @app.get("/")
