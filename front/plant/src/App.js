@@ -27,7 +27,7 @@ function App() {
       }
     }).then(res => {
       setResult({
-        ...result,
+        ...{},
         ...res.data
       });
       console.log("REs", res)
@@ -52,6 +52,7 @@ function App() {
               <h2>Описание</h2>
               <p>{result.description}</p>
             </div>
+            {result.how_to_kill && 
             <div className="col-md-12 mb-3 text-start row" >
               <h2>Чем лечить</h2>
               <div className='col-md-6'>
@@ -74,7 +75,7 @@ function App() {
                   </table>
                 </div>
                 <div className='col-md-6'>
-  <table className='table'>
+                  <table className='table'>
                   <thead>
                     <tr>
                       <th scope="col">В личных подсобных хозяйствах:</th>
@@ -129,6 +130,7 @@ function App() {
               </div>
               
             </div>
+            }
           </div>
         }
       

@@ -20,4 +20,4 @@ def predict_image(img, model):
     _, preds  = torch.max(yb, dim=1)
     # Retrieve the class label
 
-    return descriptions[labels[preds[0].item()]]
+    return descriptions.get(labels[preds[0].item()], {"name" :labels[preds[0].item()]})
