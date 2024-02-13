@@ -56,89 +56,104 @@ function App() {
             {result.how_to_kill && (
               <div className="col-md-12 mb-3 text-start row">
                 <h2>Чем лечить</h2>
-                <div className="col-md-6">
-                  <h3>Химические пестициды</h3>
-                  <div className="col-md-12 row">
-                    <div className="col-md-6">
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Опрыскивание по вегетации:</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {result.how_to_kill.chemical.veg.map((p) => {
-                            return (
+                {result.how_to_kill.chemical && (
+                  <div className="col-md-6">
+                    <h3>Химические пестициды</h3>
+                    <div className="col-md-12 row">
+                      {result.how_to_kill.chemical.veg && (
+                        <div className="col-md-6">
+                          <table className="table">
+                            <thead>
                               <tr>
-                                <th scope="row">{p}</th>
+                                <th scope="col">Опрыскивание по вегетации:</th>
                               </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
-                    <div className="col-md-6">
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">В личных подсобных хозяйствах:</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {result.how_to_kill.chemical.self.map((p) => {
-                            return (
+                            </thead>
+                            <tbody>
+                              {result.how_to_kill.chemical.veg.map((p) => {
+                                return (
+                                  <tr>
+                                    <th scope="row">{p}</th>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                      {result.how_to_kill.chemical.self && (
+                        <div className="col-md-6">
+                          <table className="table">
+                            <thead>
                               <tr>
-                                <th scope="row">{p}</th>
+                                <th scope="col">
+                                  В личных подсобных хозяйствах:
+                                </th>
                               </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-6">
-                  <h3>Биологические пестициды</h3>
-                  <div className="col-md-12 row">
-                    <div className="col-md-6">
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Опрыскивание по вегетации:</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {result.how_to_kill.biological.veg.map((p) => {
-                            return (
-                              <tr>
-                                <th scope="row">{p}</th>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
-                    <div className="col-md-6">
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">В личных подсобных хозяйствах:</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {result.how_to_kill.biological.self.map((p) => {
-                            return (
-                              <tr>
-                                <th scope="row">{p}</th>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
+                            </thead>
+                            <tbody>
+                              {result.how_to_kill.chemical.self.map((p) => {
+                                return (
+                                  <tr>
+                                    <th scope="row">{p}</th>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
+                )}
+                {result.how_to_kill.biological && (
+                  <div className="col-md-6">
+                    <h3>Биологические пестициды</h3>
+                    <div className="col-md-12 row">
+                      {result.how_to_kill.biological.veg && (
+                        <div className="col-md-6">
+                          <table className="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Опрыскивание по вегетации:</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {result.how_to_kill.biological.veg.map((p) => {
+                                return (
+                                  <tr>
+                                    <th scope="row">{p}</th>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                      {result.how_to_kill.biological.self && (
+                        <div className="col-md-6">
+                          <table className="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">
+                                  В личных подсобных хозяйствах:
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {result.how_to_kill.biological.self.map((p) => {
+                                return (
+                                  <tr>
+                                    <th scope="row">{p}</th>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>

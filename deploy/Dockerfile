@@ -9,4 +9,4 @@ RUN python3 -m pip install --upgrade pip
 
 COPY ./requirements.txt /requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache pip install -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /requirements.txt
