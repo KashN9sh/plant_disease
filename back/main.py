@@ -12,9 +12,7 @@ from model import ResNet9
 from utils import predict_image
 
 
-app = FastAPI(root_path="/api")
-top_router = APIRouter(prefix="/api")
-app.include_router(top_router)
+app = FastAPI(root_path="/api", root_path_in_servers=False)
 
 @app.on_event("startup")
 async def startup_event():
