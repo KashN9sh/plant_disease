@@ -12,7 +12,7 @@ from model import ResNet9
 from utils import predict_image
 
 
-app = FastAPI()
+app = FastAPI(root_path="/api")
 top_router = APIRouter(prefix="/api")
 app.include_router(top_router)
 
