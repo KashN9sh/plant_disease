@@ -14,9 +14,6 @@ from utils import predict_image
 
 app = FastAPI(
     root_path="/api",
-    docs_url="/api/docs",
-    redoc_url="/api/redoc",
-    openapi_url="/api/openapi.json",
 )
 
 
