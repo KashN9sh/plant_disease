@@ -18,7 +18,7 @@ function App() {
     formData.append("files", file);
     axios({
       method: "post",
-      url: "/files/",
+      url: "/api/files/",
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
