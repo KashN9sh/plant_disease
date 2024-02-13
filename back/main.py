@@ -3,8 +3,8 @@ from typing import Annotated
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import HTMLResponse
 
-import torch  
-import torchvision.transforms as transforms 
+import torch
+import torchvision.transforms as transforms
 from PIL import Image
 import io
 
@@ -12,7 +12,13 @@ from model import ResNet9
 from utils import predict_image
 
 
-app = FastAPI(root_path="/api")
+app = FastAPI(
+    root_path="/api",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
+    openapi_url="/api/openapi.json",
+)
+
 
 @app.on_event("startup")
 async def startup_event():
@@ -21,20 +27,19 @@ async def startup_event():
     """
     # Initialize the pytorch model
     import __main__
-    setattr(__main__, "ResNet9", ResNet9)
-    model = torch.load('plant-disease-model-complete.pth', map_location=torch.device('cpu'))
 
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Resize((256,256))
-    ])
+    setattr(__main__, "ResNet9", ResNet9)
+    model = torch.load(
+        "plant-disease-model-complete.pth", map_location=torch.device("cpu")
+    )
+
+    transform = transforms.Compose(
+        [transforms.ToTensor(), transforms.Resize((256, 256))]
+    )
     print(model)
 
     # add model and other preprocess tools too app state
-    app.package = {
-        "transform": transform,  # joblib.load
-        "model": model
-    }
+    app.package = {"transform": transform, "model": model}  # joblib.load
 
 
 @app.post("/files/")
