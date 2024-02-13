@@ -1,6 +1,6 @@
 from typing import Annotated
 
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, APIRouter, File, UploadFile
 from fastapi.responses import HTMLResponse
 
 import torch
@@ -12,8 +12,9 @@ from model import ResNet9
 from utils import predict_image
 
 
-app = FastAPI(root_path = "/api/docs")
-
+app = FastAPI()
+top_router = APIRouter(prefix="/api")
+app.include_router(top_router)
 
 @app.on_event("startup")
 async def startup_event():
