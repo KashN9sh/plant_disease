@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("Nunito.ttf");
+}
+
+:root {
+  --bs-body-font-family: "Nunito", "Regular500";
+}
+
 .bg-green-100{
   background-color: #daf8cf !important;
 }
