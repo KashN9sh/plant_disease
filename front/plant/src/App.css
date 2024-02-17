@@ -3,14 +3,21 @@
 }
 
 .bg-green-200{
-  background-color: #adde9c;
+  background: rgb(173,222,156);
+background: linear-gradient(90deg, rgba(173,222,156,1) 0%, rgba(218,248,207,1) 35%, rgba(255,253,226,1) 100%);
+  /* background-color: #adde9c; */
 }
 
 .color-green-100{
   color: #496c3c;
 }
 
-.col-md-4{
+.bg-yellow-200{
+  background: #fffde2
+/* background: linear-gradient(270deg, rgba(241,248,207,0.5592612044817927) 0%, rgba(255,253,226,1) 100%); */
+}
+
+.col-lg-4{
   /* flex-shrink: 1; */
   transition: all 600ms ease;
 }

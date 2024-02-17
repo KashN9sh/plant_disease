@@ -55,11 +55,11 @@ function App() {
         </header>
 
       <div className="row ">
-        <div className={`${result.name ?"col-md-4":"col-md-12"} p-5 mb-4 bg-green-200 rounded-3 animate__animated animate__bounceInRight`}>
+        <div className={`${result.name ?"col-lg-4":"col-lg-12"} p-5 mb-3 bg-green-200 rounded-3 animate__animated animate__bounceInRight`}>
           <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Привет</h1>
-            <p class="col-md-8 fs-4">
-              Это приложение для определения болезней листьев плодовых растений.
+            <p class="col fs-4">
+              Это приложение для определения болезней листьев плодовых растений. <br/>
               Для начала, загрузите фото.
             </p>
 
@@ -78,8 +78,8 @@ function App() {
           
         {result.name && (
 
-          <div class="col-md-8 animate__animated animate__bounceInRight animate__delay-1s">
-            <div class="h-100 p-5 bg-body-tertiary rounded-3">
+          <div class="col p-5 mb-3 ms-lg-3 bg-yellow-200 rounded-3 animate__animated animate__bounceInRight animate__delay-1s">
+            <div class="container-fluid py-5">
               <h2>{result.name}</h2>
               <p>
               {result.description}
