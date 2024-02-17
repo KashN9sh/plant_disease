@@ -15,11 +15,15 @@ def predict_image(img, model):
     with highest probability"""
     # Convert to a batch of 1
     xb = to_device(img.unsqueeze(0), torch.device("cpu"))
+    output = model(xb)
+    probs = torch.nn.functional.softmax(output, dim=1)
+    _, preds = torch.max(probs, dim=1)
+    print(_, preds)
     # Get predictions from model
-    yb = model(xb)
-    print(yb)
-    # Pick index with highest probability
-    _, preds = torch.max(yb, dim=1)
+    # yb = model(xb)
+    # # Pick index with highest probability
+    # _, preds = torch.max(yb, dim=1)
+    # print(_, preds)
     # Retrieve the class label
 
     return descriptions.get(labels[preds[0].item()], {"name": labels[preds[0].item()]})
