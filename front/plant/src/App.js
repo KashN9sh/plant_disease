@@ -80,7 +80,7 @@ function App() {
 
           <div class="col p-5 mb-3 ms-lg-3 bg-yellow-200 rounded-3 animate__animated animate__bounceInRight animate__delay-1s">
             <div class="container-fluid py-5">
-              <h2>{result.name}</h2>
+              <h2>{result.name} {result.confidence}%</h2>
               <p>
               {result.description}
               </p>
