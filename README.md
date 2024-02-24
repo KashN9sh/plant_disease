@@ -48,7 +48,7 @@ Welcome to our plant disease recognition project! 🌿 Harnessing the magic of A
 ### Short-term Goals
 
 - [ ] Improve the accuracy of disease classification.
-- [ ] Sprinkle some magic on the user interface for an even better experience.
+- [x] Sprinkle some magic on the user interface for an even better experience.
 - [ ] Conduct additional testing on a variety of plant species.
 
 ### Medium-term Goals
