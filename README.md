@@ -40,7 +40,7 @@ Greetings, plant enthusiasts! 🌺 Here in our magical garden, we've cultivated 
 
    Open your web browser and go to:
    - Web UI: [http://localhost:3000](http://localhost:3000)
-   - Swagger API Documentation: [http://localhost:5000/app/docs](http://localhost:5000/app/docs)
+   - Swagger API Documentation: [http://localhost:5000/api/docs](http://localhost:5000/api/docs)
 
    Experience the enchantment on port 3000 for the web UI!
 
