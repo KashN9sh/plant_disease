@@ -7,7 +7,7 @@ services:
     image: plant
     user: "501:20"
     working_dir: /app
-    build: ./deploy
+    build: .
     # env_file:
     #   - ./.env
     volumes:
@@ -23,7 +23,7 @@ services:
     working_dir: /app
     volumes:
       - ./front:/app
-    command: sleep 30d
+    command: sh -c "cd plant && npm install && npm start"
 
   # db:
   #   container_name: film-db

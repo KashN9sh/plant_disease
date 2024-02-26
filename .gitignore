@@ -22,6 +22,9 @@ front/build
 .env.test.local
 .env.production.local
 
+# IDE
+.idea
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
