@@ -7,6 +7,10 @@
   --bs-body-font-family: "Nunito", "Regular500";
 }
 
+th {
+  background: transparent !important;
+}
+
 .bg-green-100{
   background-color: #daf8cf !important;
 }
