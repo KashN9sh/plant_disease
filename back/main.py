@@ -1,18 +1,16 @@
+import io
 from typing import Annotated
-
-from fastapi import FastAPI, APIRouter, File, UploadFile
-from fastapi.responses import HTMLResponse
 
 import torch
 import torchvision.transforms as transforms
-from PIL import Image
-import io
-
+from fastapi import FastAPI, File
+from fastapi.responses import HTMLResponse
 from model import ResNet9
+from PIL import Image
 from utils import predict_image
 
-
 app = FastAPI(root_path="/api", root_path_in_servers=False)
+
 
 @app.on_event("startup")
 async def startup_event():
@@ -23,12 +21,13 @@ async def startup_event():
     import __main__
 
     setattr(__main__, "ResNet9", ResNet9)
-    model = torch.load(
-        "plant-disease-model-complete.pth", map_location=torch.device("cpu")
-    )
+    model = torch.load("plant-disease-model-complete.pth", map_location=torch.device("cpu"))
 
     transform = transforms.Compose(
-        [transforms.ToTensor(), transforms.Resize((256, 256))]
+        [
+            transforms.ToTensor(),
+            transforms.Resize((256, 256)),
+        ],
     )
     print(model)
 

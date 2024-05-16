@@ -27,17 +27,6 @@ Greetings, plant enthusiasts! 🌺 Here in our magical garden, we've cultivated 
    .bin/dev up --build
    ```
 
-4. **Cultivate the React Frontend:**
-   ```bash
-   .bin/dev exec front bash
-   ```
-
-   ```bash
-   cd plant
-   npm install
-   npm start
-   ```
-
    Open your web browser and go to:
    - Web UI: [http://localhost:3000](http://localhost:3000)
    - Swagger API Documentation: [http://localhost:5000/api/docs](http://localhost:5000/api/docs)
